@@ -5,8 +5,12 @@ class Site extends MAX_Controller {
 
 	public function index()
 	{
-		$ddata['pageTitle'] = 'cangsalak';
-		$this->set_layout->_home(['pageContant' => 'index']);
+		$data['title_name'] = 'หน้าหลัก ';
+		$data['view_file'] = 'index';
+		$data['module'] = 'site';
+
+		
+		echo Modules::run('templates/frontend', $data);
 	}
 	public function change_theme()
 	{
