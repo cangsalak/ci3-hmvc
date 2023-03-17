@@ -12,21 +12,16 @@ class MAX_Controller extends MX_Controller {
 
         $this->ci =& get_instance();
         $this->db = $this->ci->load->database($db_group, TRUE);
-        $this->ci->load->helper('form','app_helper');
-        $this->ci->load->library('form_validation');
+        $this->ci->load->helper(['form','app_helper','language']);
+        $this->ci->load->library(['form_validation','javascript']);
         $this->ci->load->library(['security','session','Set_layout']);
 
+        default_language();
+        default_theme();
 
-         $theme = $this->session->userdata('theme');
-        if($theme == "bootstrap5"){
-           $this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
-        }else if($theme == "bootstrap3"){
-           $this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
-        }else if( $theme == 'semantic2'){
-            $this->form_validation->set_error_delimiters('<div class="ui pointing red basic label">', '</div>');
-        }else{
-           $this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
-        }
+        
     }
+
+    
 
 }

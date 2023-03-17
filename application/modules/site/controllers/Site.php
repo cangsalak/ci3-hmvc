@@ -15,4 +15,11 @@ class Site extends MAX_Controller {
 		$this->session->set_userdata('theme', $theme);
 	}
 
+	public function change_languages()
+	{
+		$language =  $this->input->get('language');
+
+		$this->session->set_userdata('languages', $language);
+	}
+
 }
