@@ -10,15 +10,11 @@
 - Codeigniter  
 https://www.codeigniter.com
 - codeigniter-modular-extensions-hmvc  
-https://bitbucket.org/wiredesignz/codeigniter-modular-extensions-hmvc
+https://github.com/N3Cr0N/CodeIgniter-HMVC
 
 # Thanks
 - Codeigniter - https://www.codeigniter.com
-- Modular Extensions - https://bitbucket.org/wiredesignz
-- PHP Composer - https://getcomposer.org
-- git - https://git-scm.com
-- gitlab - https://www.gitlab.com
-- gitlab PSU - https://gitlab.psu.ac.th
+- Modular Extensions - https://github.com/N3Cr0N/CodeIgniter-HMVC
 
 
 # ผู้จัดทำ
@@ -29,4 +25,21 @@ https://bitbucket.org/wiredesignz/codeigniter-modular-extensions-hmvc
 	 * เลขที่บัญชี 2003219197
 	 * ชื่อบัญชี นาย เยาวรัตน์ ช่างสลัก
 	 * สาขา อโศก
+	 */
+
+# ติดต่อเรา
+    /**
+	 * ศูนย์ฝึกทางยุทธวิธีกองทัพบก
+	 * 153 หมู่ 3 ต.ชัยนารายณ์ อ.ชัยบาดาล จ.ลพบุรี 15130
+	 * ติดต่อสอบถามรายละเอียด โทร.036791444 โทร.ทบ. 65207 Email: attc.atc@gmail.com
+	 */
+
+# จัดทำขึ้นเพื่อ
+    /**
+	 * ระบบนี้จัดทำขึ้นตามความต้องการของหน่วยงาน ที่อยากจะมีระบบ อนุมัติเอกสาร เก็บข้อมูลส่วนบุคคล(เหมือน PDX)
+	 * 1. โปรแกรมนี้ชื่อว่า " WORK SUB MIT"
+	 * 2. จัดทำขึ้นเพื่อตอบโจทย์ความต้องการสารบรรณไร้กระดาษ
+	 * 3. เพื่อให้กำลังพลภายในหน่วยใช้งานโดยไม่ต้องมาที่ทำงาน (มาตราการป้องกัน COVID-19)
+	 * 4. เพิ่มความสะดวก ช่วยรักษาสิ่งแวดล้อม
+	 * 5. โปรแกรมนี้จัดทำโดย นายเยาวรัตน์ ช่างสลัก
 	 */
