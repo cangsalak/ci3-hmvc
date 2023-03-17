@@ -44,6 +44,31 @@ class Templates extends MAX_Controller {
 		$data['theme'] = base_url('themes/'.$theme);
 
 
-		$this->load->view('frontend', $data);
+		$this->load->view('frontend_template', $data);
+	}
+
+	function login($data)
+	{
+		$data['site_title'] = $this->config->item('app');
+		$data['description'] = 'โปรแกรมงานสารบรรณ ออนไลน์ ศูนย์ฝึกทางยุทธวิธีกองทัพบก , ศฝยว.ทบ., ลพบุรี, ThaiArmy, ทหารลพบุรี, ทหารสารบรรณ, คอสารบรรณ ';
+		$data['author'] = $this->config->item('author');
+		$data['generator'] = $this->config->item('version');
+
+		$data['breadcrumb'] = [
+			'main' => 'หน้าหลัก',
+			'sub_main' => $data['title_name'],
+			'link' => base_url(''),
+		];
+		$theme = $this->config->item('theme_backend');
+		$path_theme = FCPATH.'themes/'.$theme;
+		
+		if (!is_dir($path_theme)) {
+			mkdir($path_theme, 0777, true);
+		}
+
+		$data['theme'] = base_url('themes/'.$theme);
+
+
+		$this->load->view('login_template', $data);
 	}
 }
