@@ -29,27 +29,35 @@ if($logged_in === TRUE)
                             <?=form_open(custom_constants::register_url,['class' => 'user']);?>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" name="first_name" value="<?=set_value('first_name')?>" id="exampleFirstName" placeholder="<?=lang('First Name')?>">
+                                        <input type="text" class="form-control form-control-user <?= (form_error('first_name') != '') ? 'is-invalid' : ''; ?>" name="first_name" value="<?=set_value('first_name')?>" id="exampleFirstName" placeholder="<?=lang('First Name')?>">
+                                        <?= form_error('first_name', '<small class="text-small text-danger">', '</small>') ?>
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" name="surname" value="<?=set_value('surname')?>" id="exampleLastName" placeholder="<?=lang('Last Name')?>">
+                                        <input type="text" class="form-control form-control-user <?= (form_error('surname') != '') ? 'is-invalid' : ''; ?>" name="surname" value="<?=set_value('surname')?>" id="exampleLastName" placeholder="<?=lang('Last Name')?>">
+                                        
+                                        <?= form_error('surname', '<small class="text-small text-danger">', '</small>') ?>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" name="username" value="<?=set_value('username')?>" id="username" placeholder="<?=lang('username')?>">
+                                    <input type="text" class="form-control form-control-user <?= (form_error('username') != '') ? 'is-invalid' : ''; ?>" name="username" value="<?=set_value('username')?>" id="username" placeholder="<?=lang('username')?>">
+                                        <?= form_error('username', '<small class="text-small text-danger">', '</small>') ?>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" name="email" value="<?=set_value('email')?>" id="email" placeholder="<?=lang('Email Address')?>">
+                                    <input type="email" class="form-control form-control-user <?= (form_error('email') != '') ? 'is-invalid' : ''; ?>" name="email" value="<?=set_value('email')?>" id="email" placeholder="<?=lang('Email Address')?>">
+                                        <?= form_error('email', '<small class="text-small text-danger">', '</small>') ?>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" name="email_confirmation" value="<?=set_value('email_confirmation')?>" id="exampleInputEmail" placeholder="<?=lang('Email Address')?>">
+                                    <input type="email" class="form-control form-control-user <?= (form_error('email_confirmation') != '') ? 'is-invalid' : ''; ?>" name="email_confirmation" value="<?=set_value('email_confirmation')?>" id="exampleInputEmail" placeholder="<?=lang('Email Address Confirmation')?>">
+                                        <?= form_error('email_confirmation', '<small class="text-small text-danger">', '</small>') ?>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user" name="password" value="<?=set_value('password')?>" id="exampleInputPassword" placeholder="<?=lang('Password')?>">
+                                        <input type="password" class="form-control form-control-user <?= (form_error('password') != '') ? 'is-invalid' : ''; ?>" name="password" value="<?=set_value('password')?>" id="exampleInputPassword" placeholder="<?=lang('Password')?>">
+                                        <?= form_error('password', '<small class="text-small text-danger">', '</small>') ?>
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user" name="password_confirmation" value="<?=set_value('password_confirmation')?>" id="exampleRepeatPassword" placeholder="<?=lang('Repeat Password')?>">
+                                        <input type="password" class="form-control form-control-user <?= (form_error('password_confirmation') != '') ? 'is-invalid' : ''; ?>" name="password_confirmation" value="<?=set_value('password_confirmation')?>" id="exampleRepeatPassword" placeholder="<?=lang('Repeat Password')?>">
+                                        <?= form_error('password_confirmation', '<small class="text-small text-danger">', '</small>') ?>
                                     </div>
                                 </div>
                                 <button name="submit" class="btn btn-primary btn-user btn-block">

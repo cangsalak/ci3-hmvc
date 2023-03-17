@@ -58,6 +58,8 @@ $route['translate_uri_dashes'] = FALSE;
 $route['signin'] = 'auth/login';
 // module auth/login/index
 $route['signup'] = 'auth/login/register_user_form';
+// module auth/login/email_verification
+$route['email_verification'] = 'auth/login/email_verification';
 // module auth/login/user_logout
 $route['signout'] = 'auth/login/user_logout';
 // module auth/forgot_password/index
@@ -67,5 +69,7 @@ $route['google'] = 'auth/google';
 
 $route['admin_panel'] = "";
 $route['admin'] = "admin_panel";
+
+
 
 

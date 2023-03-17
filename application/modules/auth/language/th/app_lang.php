@@ -17,6 +17,9 @@ $lang['Create an Account!'] = 'สมัครสมาชิก !';
 // register
 $lang['First Name'] = 'ชื่อ';
 $lang['Last Name'] = 'นามสกุล';
+$lang['surname'] = 'นามสกุล';
+$lang['username'] = 'ชื่อผู้ใช้งาน';
+$lang['Email Address Confirmation'] = 'ยืนยันอีเมล์อีกครั้ง';
 $lang['Email Address'] = 'ที่อยู่อีเมล์';
 $lang['Password'] = 'รหัสผ่าน';
 $lang['Repeat Password'] = 'กรอกรหัสผ่านอีกครั้ง';

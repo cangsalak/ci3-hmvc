@@ -34,14 +34,6 @@ class Admin_Panel extends MAX_Controller {
 		$data['account_type'] = $this->session->userdata['account_type'];
 		$data['logged_in_since'] = $this->session->userdata['logged_in_since'];
 		
-		// $data['meta_title'] = "Admin Panel";
-		// $data['meta_description'] = "Welcome to the admin panel";
-		
-		// $data['modules'][] = "admin_panel";
-		// $data['methods'][] = "view_admin_panel_default";
-		
-		// echo Modules::run("templates/admin_template", $data);
-
 		
 		$data['title_name'] = lang('admin');
 		$data['view_file'] = 'admin_panel_default';

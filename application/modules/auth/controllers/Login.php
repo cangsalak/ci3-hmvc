@@ -398,10 +398,8 @@ class Login extends MAX_Controller {
 			$data['logged_in'] = FALSE;
 		}
 		
-		$data['registered'] = FALSE;
+			$data['registered'] = FALSE;
 		
-		if($this->input->post('first_name'))
-		{
 			$data['values_posted']['first_name'] = $this->input->post('first_name');
 			$data['values_posted']['surname'] = $this->input->post('surname');
 			$data['values_posted']['username'] = $this->input->post('username');
@@ -409,16 +407,28 @@ class Login extends MAX_Controller {
 			
 			$this->load->library("form_validation");
 			
-			$this->form_validation->set_rules('first_name', 'first name', 'required|max_length[64]|alpha_dash');
-			$this->form_validation->set_rules('surname', 'surname', 'required|max_length[64]|min_length[2]|alpha_dash');
-			$this->form_validation->set_rules('username', 'username', 'required|max_length[32]|min_length[3]|alpha_dash');
+			$this->form_validation->set_rules('first_name', 'first name', 'required|max_length[64]');
+			$this->form_validation->set_rules('surname', 'surname', 'required|max_length[64]|min_length[2]');
+			$this->form_validation->set_rules('username', 'username', 'required|max_length[32]|min_length[3]');
 			$this->form_validation->set_rules('email', 'email', 'required|max_length[320]|valid_email|matches[email_confirmation]');
 			$this->form_validation->set_rules('email_confirmation', 'confirm email', 'required|max_length[320]|valid_email');
 			$this->form_validation->set_rules('password', 'password', 'required|min_length[8]|max_length[32]|matches[password_confirmation]');
 			$this->form_validation->set_rules('password_confirmation', 'confirm password', 'required|min_length[8]|max_length[32]');
 			
-			if($this->form_validation->run())
+			if($this->form_validation->run() == FALSE)
 			{
+				
+				$data['title_name'] = lang('register');
+				$data['view_file'] = 'register';
+				$data['module'] = 'auth/login';
+				$data['meta_description'] = "New user registration";
+
+				
+				echo Modules::run('templates/login', $data);
+
+			}else{
+				var_dump($this->input->post());
+				// die();
 				$post_data['first_name'] = $this->input->post('first_name');
 				$post_data['surname'] = $this->input->post('surname');
 				$post_data['username'] = $this->input->post('username');
@@ -436,16 +446,8 @@ class Login extends MAX_Controller {
 					// Registration error
 					$data['form_error'] = $reg_user;
 				}
+				redirect('signin');
 			}
-		}
-				
-		$data['title_name'] = lang('register');
-		$data['view_file'] = 'register';
-		$data['module'] = 'auth/login';
-		$data['meta_description'] = "New user registration";
-
-		
-		echo Modules::run('templates/login', $data);
 		
 	}
 	
@@ -478,7 +480,7 @@ class Login extends MAX_Controller {
 				$insert_data['account_type'] = custom_constants::default_account_type;
 				
 				// $insert_data['email_verification_link'] = $this->_create_email_ver_string($data['username'], $data['email']);
-				$insert_data['email_verification_link'] = 'yes';
+				$insert_data['email_verified'] = "yes";
 				$insert_data['email_ver_time'] = time();
 			}
 			else
@@ -581,13 +583,22 @@ class Login extends MAX_Controller {
 			}
 		}
 		
-		$data['meta_title'] = "Verify Email";
-		$data['meta_description'] = "Email verification";
+		// $data['meta_title'] = "Verify Email";
+		// $data['meta_description'] = "Email verification";
 		
-		$data['modules'][] = "login";
-		$data['methods'][] = "view_verify_email";
+		// $data['modules'][] = "login";
+		// $data['methods'][] = "view_verify_email";
 		
-		echo Modules::run("templates/login_template", $data);
+		// echo Modules::run("templates/login_template", $data);
+
+		
+		$data['title_name'] = lang('verify_email');
+		$data['view_file'] = 'verify_email';
+		$data['module'] = 'auth/login';
+		$data['meta_description'] = "New user registration";
+
+		
+		echo Modules::run('templates/login', $data);
 	}
 	
 	private function _check_email_ver_string($ver_string)
@@ -721,7 +732,7 @@ class Login extends MAX_Controller {
 					$data['new_email_successful'] = TRUE;
 					$data['new_email'] = $this->input->post('email');
 				
-					// $new_link = $this->_create_email_ver_string($username, $data['new_email']);
+					$new_link = $this->_create_email_ver_string($username, $data['new_email']);
 					$update_data['email_verification_link'] = $new_link;
 					$this->mdl_login->_update($id, $update_data);
 				}
