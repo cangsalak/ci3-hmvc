@@ -25,7 +25,7 @@ class Templates extends MAX_Controller {
 	function frontend($data)
 	{
 		$data['site_title'] = $this->config->item('app');
-		$data['description'] = 'โปรแกรมงานสารบรรณ ออนไลน์ ศูนย์ฝึกทางยุทธวิธีกองทัพบก , ศฝยว.ทบ., ลพบุรี, ThaiArmy, ทหารลพบุรี, ทหารสารบรรณ, คอสารบรรณ ';
+		$data['description'] = $this->config->item('description');
 		$data['author'] = $this->config->item('author');
 		$data['generator'] = $this->config->item('version');
 
@@ -50,7 +50,7 @@ class Templates extends MAX_Controller {
 	function login($data)
 	{
 		$data['site_title'] = $this->config->item('app');
-		$data['description'] = 'โปรแกรมงานสารบรรณ ออนไลน์ ศูนย์ฝึกทางยุทธวิธีกองทัพบก , ศฝยว.ทบ., ลพบุรี, ThaiArmy, ทหารลพบุรี, ทหารสารบรรณ, คอสารบรรณ ';
+		$data['description'] = $this->config->item('description');
 		$data['author'] = $this->config->item('author');
 		$data['generator'] = $this->config->item('version');
 

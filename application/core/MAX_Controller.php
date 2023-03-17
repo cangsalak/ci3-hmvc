@@ -2,6 +2,7 @@
 
 /* load the MX_Loader class */
 require APPPATH."third_party/MX/Controller.php";
+// require APPPATH."modules/auth/libraries/check_user_login.php";
 
 class MAX_Controller extends MX_Controller {
     
@@ -13,8 +14,7 @@ class MAX_Controller extends MX_Controller {
         $this->ci =& get_instance();
         $this->db = $this->ci->load->database($db_group, TRUE);
         $this->ci->load->helper(['form','app_helper','language','url']);
-        $this->ci->load->library(['form_validation','javascript']);
-        $this->ci->load->library(['security','session']);
+        $this->ci->load->library(['form_validation','javascript','session','security']);
 
         
         set_default_language();

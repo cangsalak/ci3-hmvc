@@ -56,7 +56,16 @@ $route['translate_uri_dashes'] = FALSE;
 
 // module auth/login/index
 $route['signin'] = 'auth/login';
-// module auth/register/index
-$route['signup'] = 'auth/register';
+// module auth/login/index
+$route['signup'] = 'auth/login/register_user_form';
+// module auth/login/user_logout
+$route['signout'] = 'auth/login/user_logout';
 // module auth/forgot_password/index
 $route['forgot_password'] = 'auth/forgot';
+// module auth/google/index
+$route['google'] = 'auth/google';
+
+$route['admin_panel'] = "";
+$route['admin'] = "admin_panel";
+
+
