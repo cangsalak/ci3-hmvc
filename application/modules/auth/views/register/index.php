@@ -43,7 +43,7 @@
                             </form>
                             <hr>
                             <div class="text-center">
-                                <a class="small" href="forgot-password.html"><?=lang('Forgot Password?')?></a>
+                                <a class="small" href="<?=base_url('forgot_password')?>"><?=lang('Forgot Password?')?></a>
                             </div>
                             <div class="text-center">
                                 <a class="small" href="<?=base_url('signin')?>"><?=lang('Already have an account? Login!')?></a>

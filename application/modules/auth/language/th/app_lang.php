@@ -24,3 +24,9 @@ $lang['Register Account'] = 'สมัครสมาชิก';
 $lang['Register with Google'] = 'สมัครสมาชิกด้วย Google';
 $lang['Register with Facebook'] = 'สมัครสมาชิกด้วย Facebook';
 $lang['Already have an account? Login!'] = 'หากมี Account กดที่นี้เพื่อเข้าสู่ระบบ';
+
+// Forgot
+$lang['Forgot'] = "เราเข้าใจแล้ว สิ่งต่างๆ เกิดขึ้น เพียงป้อนที่อยู่อีเมลของคุณด้านล่าง แล้วเราจะส่งลิงก์เพื่อรีเซ็ตรหัสผ่านให้คุณ!";
+$lang['Forgot Your Password?'] = 'รหัสผ่าน';
+$lang['Enter Email Address...'] = 'ที่อยู่อีเมล์......';
+$lang['Reset Password'] = 'รีเซ็ทรหัสผ่าน';

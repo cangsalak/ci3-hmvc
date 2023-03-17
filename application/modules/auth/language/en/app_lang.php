@@ -24,3 +24,9 @@ $lang['Register Account'] = 'Register Account';
 $lang['Register with Google'] = 'Register with Google';
 $lang['Register with Facebook'] = 'Register with Facebook';
 $lang['Already have an account? Login!'] = 'Already have an account? Login!';
+
+// Forgot
+$lang['Forgot'] = "We get it, stuff happens. Just enter your email address below and we'll send you a link to reset your password!";
+$lang['Forgot Your Password?'] = 'Forgot Your Password?';
+$lang['Enter Email Address...'] = 'Enter Email Address......';
+$lang['Reset Password'] = 'Reset Password';
