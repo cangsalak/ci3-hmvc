@@ -9,7 +9,7 @@ class Register extends MAX_Controller {
     }
 	public function index()
 	{
-		$data['title_name'] = 'หน้าหลัก ';
+		$data['title_name'] = lang('register');
 		$data['view_file'] = 'index';
 		$data['module'] = 'auth/register';
 

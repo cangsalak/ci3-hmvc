@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Site extends MAX_Controller {
+class Forgot_password extends MAX_Controller {
 
 	function __construct()
     {
@@ -9,11 +9,11 @@ class Site extends MAX_Controller {
     }
 	public function index()
 	{
-		$data['title_name'] = lang('home');;
+		$data['title_name'] = 'หน้าหลัก ';
 		$data['view_file'] = 'index';
-		$data['module'] = 'site';
+		$data['module'] = 'auth/Forgot_password';
 
 		
-		echo Modules::run('templates/frontend', $data);
+		echo Modules::run('templates/login', $data);
 	}
 }

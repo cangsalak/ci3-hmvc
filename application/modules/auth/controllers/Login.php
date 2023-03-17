@@ -9,7 +9,7 @@ class Login extends MAX_Controller {
     }
 	public function index()
 	{
-		$data['title_name'] = 'หน้าหลัก ';
+		$data['title_name'] = lang('login');
 		$data['view_file'] = 'index';
 		$data['module'] = 'auth/login';
 
