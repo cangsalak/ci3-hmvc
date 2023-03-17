@@ -15,6 +15,13 @@ class Templates extends MAX_Controller {
 	{
 		parent::__construct();
 	}
+	public function change_languages()
+	{
+		$language =  $this->input->get('language');
+
+		$this->session->set_userdata('languages', $language);
+	}
+	
 	function frontend($data)
 	{
 		$data['site_title'] = $this->config->item('app');
