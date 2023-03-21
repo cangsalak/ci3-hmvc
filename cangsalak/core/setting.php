@@ -36,7 +36,7 @@ if (isset($_POST['save'])) {
 <!doctype html>
 <html>
     <head>
-        <title>SOCIANOVATION Admin Panel</title>
+        <title>CANGSALAK Admin Panel</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <style>
             body{
@@ -50,7 +50,7 @@ if (isset($_POST['save'])) {
   <div class="col-md-6 offset-md-3">
     <?php echo $res; ?>
 <form action="setting.php" method="POST">
-<?php $target = $_POST['target'] ? $_POST['target'] : $get_setting->target;?>
+    <?php $target = $_POST['target'] ? $_POST['target'] : $get_setting->target;?>
             <label>Target Folder</label> 
             
             <p>*** การใช้งาน กรุณาระบุที่อยู่ที่ท่านต้องการจะทำการ generation ***</p>
@@ -58,13 +58,13 @@ if (isset($_POST['save'])) {
             <p>*** หากท่านต้องการสร้างในตัว นอกเหนือจากที่กล่าวมา กรุณากรอกภายใน FORM เพื่อสร้าง ***</p>
 
             <div class="form-group">
-                <label for="exampleInputEmail1">Target Folder another</label>
-                <input type="text" class="form-control"name="target" value="<?=$target?>" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="<?php echo $target == '../application/' || $target == 'output/'? '' : ''; ?> required">
+                <label for="target">Target Folder another</label>
+                <input type="text" class="form-control"name="target" value="<?=$target?>" id="target" aria-describedby="emailHelp" placeholder="<?php echo $target == '../application/' || $target == 'output/'? '' : ''; ?> required">
             </div>
-    <input type="submit" value="Save" name="save" class="btn btn-primary" />
-    
-    <a href="../index.php" class="btn btn-default">Back</a>
-</form>
+        <input type="submit" value="Save" name="save" class="btn btn-primary" />
+        
+        <a href="../index.php" class="btn btn-default">Back</a>
+    </form>
         <?php
           $i = 0;
         foreach (glob("../".$target) as $filename) {

@@ -76,7 +76,7 @@ function delAllFileInfolder($folder=''){
 function lang_s($file){
     $line_text = file($file);
     foreach( $line_text as $line_num=>$text){
-        if( strpos($text, 'lang(') !== false ){
+        if( strpos($text, 'lang(*)') !== false ){
             $text = $line_num + 1;
         }
     }
