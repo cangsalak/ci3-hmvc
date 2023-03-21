@@ -1,7 +1,7 @@
 <?php 
 
 $string = "<div class=\"container-fluid\">
-        <h3 style=\"margin-top:0px\">Baca ".ucfirst($table_name)."</h3>
+        <h3 style=\"margin-top:0px\"><i class=\"fa fa-file\"> </i>&nbsp;".ucfirst($table_name)."</h3>
         <br>
         <table class=\"table\">";
 foreach ($non_pk as $row) {
@@ -13,6 +13,6 @@ $string .= "\n\t</table>
 
 
 
-$hasil_view_read = createFile($string, $target."views/" . $c_url . "/" . $v_read_file);
+$hasil_view_read = createFile($string, $target."views/" . $v_read_file);
 
 ?>

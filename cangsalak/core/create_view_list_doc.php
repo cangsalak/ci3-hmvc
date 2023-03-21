@@ -29,6 +29,6 @@ $string .=  "\t
         </table>";
 
 
-$hasil_view_doc = createFile($string, $target."views/" . $c_url . "/" . $v_doc_file);
+$hasil_view_doc = createFile($string, $target."views/" . $v_doc_file);
 
 ?>

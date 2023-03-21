@@ -101,17 +101,17 @@ foreach (glob($_SESSION['path']) as $filename) {
                             </div>
                         </div>    
 
-                        <div class="form-group">
-                            <div class="checkbox  <?php echo file_exists('../application/third_party/mpdf/mpdf.php') ? '' : '';   ?>">
-                            <?php $export_pdf = isset($_POST['export_pdf']) ? $_POST['export_pdf'] : ''; ?>
+                        <!-- <div class="form-group">
+                            <div class="checkbox  <?php //echo file_exists('../application/third_party/mpdf/mpdf.php') ? '' : '';   ?>">
+                            <?php //$export_pdf = isset($_POST['export_pdf']) ? $_POST['export_pdf'] : ''; ?>
                                 <label>
-                                    <input type="checkbox" name="export_pdf" value="1" <?php echo $export_pdf == '1' ? 'checked' : ''   ?>
-                            <?php echo file_exists('../application/third_party/mpdf/mpdf.php') ? '' : ''; ?>>
+                                    <input type="checkbox" name="export_pdf" value="1" <?php //echo $export_pdf == '1' ? 'checked' : ''   ?>
+                            <?php //echo file_exists('../application/third_party/mpdf/mpdf.php') ? '' : ''; ?>>
                                     Export PDF
                                 </label>
-                            <?php echo file_exists('../application/third_party/mpdf/mpdf.php') ? '' : '<small class="text-danger">mpdf required, download <a href="http://harviacode.com">here</a></small>'; ?>
+                            <?php //echo file_exists('../application/third_party/mpdf/mpdf.php') ? '' : '<small class="text-danger">mpdf required, download <a href="http://harviacode.com">here</a></small>'; ?>
                             </div>
-                        </div>
+                        </div> -->
 
 
                         <div class="form-group">

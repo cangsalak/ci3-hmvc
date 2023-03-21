@@ -64,17 +64,16 @@
 			<td><?= $users->passwd_reset_time ?></td>
 			<td><?= $users->password_hash ?></td>
 			<td><?= $users->surname ?></td>
-			<td><?= $users->username ?></td>
-			<td style="text-align:center" width="200px">
-				<?php 
-				echo anchor(site_url('users/read/'.$users->id),'<i class="fa fa-search-plus"></i>'); 
-				echo anchor(site_url('users/update/'.$users->id),'<i class="fa fa-pencil-square-o"></i>'); 
-				?>
+			<td><?= $users->username ?></td><td>
+        <div class="btn-group" role="group" aria-label=".users.">
+            <a href="<?=site_url('users/read/'.$users->id)?>" class="btn btn-primary"><i class="fa fa-search-plus"></i></a>
+            <a href="<?=site_url('users/update/'.$users->id)?>" class="btn btn-info"><i class="fa fa-pencil-square-o"></i></a>
+
+            <a href="" class="btn btn-danger" data-toggle="modal" data-target="#happy">
+                <i class="fa fa-trash"></i>
+            </a>
+        </div></td>
         
-        <!-- Button trigger modal -->
-        <a href="" data-toggle="modal" data-target="#happy">
-        <i class="fa fa-trash"></i>
-        </a>
 
         <!-- Modal -->
         <div class="modal fade" id="happy" tabindex="-1" role="dialog" aria-labelledby="happyLabel" aria-hidden="true">

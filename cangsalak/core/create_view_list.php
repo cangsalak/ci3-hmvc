@@ -50,18 +50,16 @@ $string = "<div class=\"container-fluid\">
     foreach ($non_pk as $row) {
         $string .= "\n\t\t\t<td><?= $" . $c_url ."->". $row['column_name'] . " ?></td>";
     }
-    $string .= "\n\t\t\t<td style=\"text-align:center\" width=\"200px\">"
-        . "\n\t\t\t\t<?php "
-        . "\n\t\t\t\techo anchor(site_url('".$c_url."/read/'.$".$c_url."->".$pk."),'<i class=\"fa fa-search-plus\"></i>'); "
-       
-        . "\n\t\t\t\techo anchor(site_url('".$c_url."/update/'.$".$c_url."->".$pk."),'<i class=\"fa fa-pencil-square-o\"></i>'); "
-       
-        . "\n\t\t\t\t?>"."
+    $string .= "<td>
+        <div class=\"btn-group\" role=\"group\" aria-label=\".$c_url.\">
+            <a href=\"<?=site_url('$c_url/read/'.\$$c_url->$pk)?>\" class=\"btn btn-primary\"><i class=\"fa fa-search-plus\"></i></a>
+            <a href=\"<?=site_url('$c_url/update/'.\$$c_url->$pk)?>\" class=\"btn btn-info\"><i class=\"fa fa-pencil-square-o\"></i></a>
+
+            <a href=\"\" class=\"btn btn-danger\" data-toggle=\"modal\" data-target=\"#happy\">
+                <i class=\"fa fa-trash\"></i>
+            </a>
+        </div></td>
         
-        <!-- Button trigger modal -->
-        <a href=\"\" data-toggle=\"modal\" data-target=\"#happy\">
-        <i class=\"fa fa-trash\"></i>
-        </a>
 
         <!-- Modal -->
         <div class=\"modal fade\" id=\"happy\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"happyLabel\" aria-hidden=\"true\">
@@ -108,6 +106,6 @@ $string .= "\n\t    </div>
         </div>";
 
 
-$hasil_view_list = createFile($string, $target."views/" . $c_url . "/" . $v_list_file);
+$hasil_view_list = createFile($string, $target."views/". $v_list_file);
 
 ?>

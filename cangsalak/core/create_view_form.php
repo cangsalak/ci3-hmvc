@@ -23,6 +23,6 @@ $string .= "\n\t    <button type=\"submit\" class=\"btn btn-primary\"><?= \$butt
 $string .= "\n\t    <a href=\"<?= site_url('".$c_url."') ?>\" class=\"btn btn-default\"><?=lang('Cancelled')?></a>";
 $string .= "\n\t</form>";
 
-$hasil_view_form = createFile($string, $target."views/" . $c_url . "/" . $v_form_file);
+$hasil_view_form = createFile($string, $target."views/". $v_form_file);
 
 ?>
