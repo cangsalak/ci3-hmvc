@@ -24,7 +24,7 @@ class Admin_Panel extends MAX_Controller {
 		parent::__construct();
 		
 		// Check login and make sure email has been verified
-		var_dump($this->session->userdata());
+		// var_dump($this->session->userdata());
 		check_user_login();
 	}
 
@@ -35,10 +35,10 @@ class Admin_Panel extends MAX_Controller {
 		$data['logged_in_since'] = $this->session->userdata['logged_in_since'];
 		
 		
-		$data['title_name'] = lang('admin');
+		$data['title_name'] = 'dashboard';
 		$data['view_file'] = 'admin_panel_default';
 		$data['module'] = 'admin_panel';
 		$data['meta_description'] = "Welcome to the admin panel";
-		echo Modules::run('templates/login', $data);
+		echo Modules::run('templates/backend', $data);
     }
 }

@@ -18,6 +18,7 @@ $table_data =	array(
 
 echo $this->table->generate($table_data);
 
-echo "<p><a href='" . base_url() . custom_constants::logout_url . "'>logout</a></p>";
+var_dump($this->session->userdata());
+
 
 ?>

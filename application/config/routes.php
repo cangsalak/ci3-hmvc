@@ -72,4 +72,4 @@ $route['admin'] = "admin_panel";
 
 
 
-
+$route['socianovation'] = "socianovation";

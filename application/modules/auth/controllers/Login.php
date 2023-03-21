@@ -172,18 +172,16 @@ class Login extends MAX_Controller {
 						$req_url = $this->session->userdata('requested_url');
 						$this->session->unset_userdata('requested_url');
 						redirect($req_url);
-					}
-					else
-					{
+					}else{
+						$this->session->set_flashdata('success','Action Completed');
 						redirect(base_url() . custom_constants::admin_page_url);
 					}
-				}
-				else
-				{
+				}else{
 					// Authentication failed so we update our blacklist
 					if($this->_update_blacklist() === FALSE)
 					{
 						// If max login attempts reached then reload the login page
+						$this->session->set_flashdata('error','Action Completed');
 						redirect(base_url() . custom_constants::login_page_url);
 					}
 					

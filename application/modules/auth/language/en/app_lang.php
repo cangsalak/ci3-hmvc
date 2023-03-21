@@ -30,3 +30,9 @@ $lang['Forgot'] = "We get it, stuff happens. Just enter your email address below
 $lang['Forgot Your Password?'] = 'Forgot Your Password?';
 $lang['Enter Email Address...'] = 'Enter Email Address......';
 $lang['Reset Password'] = 'Reset Password';
+
+
+$lang['admin'] = 'Administrator';
+$lang['Reset Password'] = 'รีเซ็ทรหัสผ่าน';
+$lang['Reset Password'] = 'รีเซ็ทรหัสผ่าน';
+$lang['Reset Password'] = 'รีเซ็ทรหัสผ่าน';

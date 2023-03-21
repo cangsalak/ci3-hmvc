@@ -33,3 +33,11 @@ $lang['Forgot'] = "เราเข้าใจแล้ว สิ่งต่า
 $lang['Forgot Your Password?'] = 'รหัสผ่าน';
 $lang['Enter Email Address...'] = 'ที่อยู่อีเมล์......';
 $lang['Reset Password'] = 'รีเซ็ทรหัสผ่าน';
+
+
+
+$lang['admin'] = 'Administrator';
+$lang['Reset Password'] = 'รีเซ็ทรหัสผ่าน';
+$lang['Reset Password'] = 'รีเซ็ทรหัสผ่าน';
+$lang['Reset Password'] = 'รีเซ็ทรหัสผ่าน';
+

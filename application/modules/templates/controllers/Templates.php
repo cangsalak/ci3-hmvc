@@ -71,4 +71,29 @@ class Templates extends MAX_Controller {
 
 		$this->load->view('login_template', $data);
 	}
+
+	function backend($data)
+	{
+		$data['site_title'] = $this->config->item('app');
+		$data['description'] = $this->config->item('description');
+		$data['author'] = $this->config->item('author');
+		$data['generator'] = $this->config->item('version');
+
+		$data['breadcrumb'] = [
+			'main' => 'admin',
+			'sub_main' => $data['title_name'],
+			'link' => base_url(''),
+		];
+		$theme = $this->config->item('theme_backend');
+		$path_theme = FCPATH.'themes/'.$theme;
+		
+		if (!is_dir($path_theme)) {
+			mkdir($path_theme, 0777, true);
+		}
+
+		$data['theme'] = base_url('themes/'.$theme);
+
+
+		$this->load->view('backend_template', $data);
+	}
 }

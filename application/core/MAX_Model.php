@@ -291,7 +291,7 @@ Class MAX_Model extends CI_Model
     /*      - SELECT by Your params and LIMIT 1
     /*      - Example:: get_row('table_name', array('where'=>'your conditions','limit'=>array(0,10),...)
     /*/////////////////////////////////////////*/
-    function get_row($table_name=NULL, $params=NULL, $return_Object=FALSE) {
+    function get_row_to($table_name=NULL, $params=NULL, $return_Object=FALSE) {
         $table_name = $table_name!=NULL ? $table_name : $this->table;
         $params['limit'] = '1';
         $result = $this->get_rows($table_name, $params, $return_Object);
@@ -379,7 +379,7 @@ Class MAX_Model extends CI_Model
     /*      - DELETE by your conditions
     /*      - Example:: delete(array(ident=>1,id=>23,...),'sample_table')
     /*/////////////////////////////////////////*/
-    function delete($wheres, $table_name=NULL)
+    function delete_table($wheres, $table_name=NULL)
     {
         if (!is_array($wheres))
             return FALSE;

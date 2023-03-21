@@ -2,3 +2,9 @@
 
 
 $lang['wellcome'] = 'Welcome to Scrolling Nav';
+
+
+$lang['admin'] = 'Administrator';
+$lang['Reset Password'] = 'รีเซ็ทรหัสผ่าน';
+$lang['Reset Password'] = 'รีเซ็ทรหัสผ่าน';
+$lang['Reset Password'] = 'รีเซ็ทรหัสผ่าน';

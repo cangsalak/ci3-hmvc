@@ -1,0 +1,90 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
+
+/* dev : cangsalak*/
+/* fb : https://facebook.com/maxcangsalak*/
+/* fanspage : https://web.facebook.com/maxcangsalak*/
+/* Generate By Max-CRUD Generator 05/10/2022 20:02:32*/
+/**
+	 * โปรแกรมนี้จัดทำโดย นายเยาวรัตน์  ช่างสลัก
+	 * ติดต่อสอบถามรายละเอียด โทร.0890167912 โทร.ทบ. 65207 Email: max_kai@hotmail.com
+	 * บริจาคได้ที่ KKP Start Saving
+	 * เลขที่บัญชี 2003219197
+	 * ชื่อบัญชี นาย เยาวรัตน์ ช่างสลัก
+	 * สาขา อโศก
+*/
+/* Location: ./application/modules/backend/models/Affiliation_model.php*/
+/* Please DO NOT modify this information */
+
+class Affiliation_model extends MY_Model{
+//*******************************************************ชื่อฐานข้อมูล*******************************************************\\
+  private $table = "affiliation";
+
+  private $primary_key = "af_id";
+  private $column_order = ["af_sname","af_fname","af_social","af_tel"];
+  private $order = ["af_id"=>"DESC"];
+  private $select = "af_id,af_sname,af_fname,af_social,af_tel";
+//*******************************************************การเรียกใช้งานเริ่มต้น*******************************************************\\
+  public function __construct()
+  {
+    $config = array(
+      'table' => $this->table,
+      'primary_key' => $this->primary_key,
+      'select' => $this->select,
+      'column_order' => $this->column_order,
+      'order' => $this->order,
+    );
+
+    parent::__construct($config);
+  }
+
+//************************************การกรองข้อมูล************************************\\ \\
+  private function _get_datatables_query()
+  {
+    $this->db->select($this->select);
+    $this->db->from($this->table);
+
+    //filter
+			if($this->input->post('af_sname')){
+				$this->db->like('af_sname', $this->input->post('af_sname'));
+			}
+			if($this->input->post('af_fname')){
+				$this->db->like('af_fname', $this->input->post('af_fname'));
+			}
+			if($this->input->post('af_social')){
+				$this->db->like('af_social', $this->input->post('af_social'));
+			}
+			if($this->input->post('af_tel')){
+				$this->db->like('af_tel', $this->input->post('af_tel'));
+			}
+      if(isset($_POST['order'])){
+        $this->db->order_by($this->column_order[$_POST['order']['0']['column']], $_POST['order']['0']['dir']);
+      } else if(isset($this->order)){
+        $order = $this->order;
+        $this->db->order_by(key($order), $order[key($order)]);
+      }
+  }
+// //************************************ดึงข้อมูลจากฐานข้อมูล************************************\\ \\
+  public function get_datatables()
+  {
+    $this->_get_datatables_query();
+    if($_POST['length'] != -1)
+    $this->db->limit($_POST['length'], $_POST['start']);
+    $query = $this->db->get();
+    return $query->result();
+  }
+// //************************************นับตัวกรอง************************************\\ \\
+  public function count_filtered()
+  {
+    $this->_get_datatables_query();
+    $query = $this->db->get();
+    return $query->num_rows();
+  }
+// //************************************นับฐานข้อมูลทั้งหมด************************************\\ \\
+  public function count_all()
+  {
+    $this->db->select($this->select);
+    $this->db->from($this->table);
+    return $this->db->count_all_results();
+  }
+}
+/* Generate By Max-CRUD Generator สร้างเมื่อ 05/10/2022 20:02:32*/

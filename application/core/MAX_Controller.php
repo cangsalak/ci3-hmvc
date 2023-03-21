@@ -11,12 +11,11 @@ class MAX_Controller extends MX_Controller {
     {
         parent::__construct();
 
-        $this->ci =& get_instance();
-        $this->db = $this->ci->load->database($db_group, TRUE);
-        $this->ci->load->helper(['form','app_helper','language','url']);
-        $this->ci->load->library(['form_validation','javascript','session','security']);
+        $ci =& get_instance();
+        $this->db = $ci->load->database($db_group, TRUE);
+        $ci->load->helper(['form','app_helper','language','url','my_helper']);
+        $ci->load->library(['form_validation','javascript','session','security','dynamic_menu']);
 
-        
         set_default_language();
         $language  = $this->session->userdata('languages');
         if($language == 'th'){
